@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Education</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="education.css" />
+</head>
+
+<body>
+
+  <!-- Fixed Navigation Bar -->
+  <nav>
+    <a href="index.html?animate=true">Home</a>
+    <a href="about.html">About</a>
+    <a href="education.html" class="active">Education</a>
+    <a href="skills.html">Skills</a>
+    <a href="resume.html">Resume</a>
+    <a href="#" id="theme-toggle" title="Toggle Dark Mode">⏾</a>
+  </nav>
+
+<!-- ... (rest of your unchanged HTML) ... -->
+
+<div class="main-box">
+  <div class="content">
+    <!-- <h1>Education Background</h1> -->
+    
+    <div class="education-entry">
+  <img src="iiith.jpg" alt="IIITH Logo" class="edu-img">
+  <div class="edu-text">
+    <h2>Bachelor of Technology in Electronics and Communication Engineering</h2>
+    <p><strong>Institution:</strong> International Institute Of Information Technology, Hyderabad (IIITH)</p>
+    <p><strong>Year:</strong> 2023 – 2027 (Expected)</p>
+    <p><strong>CGPA:</strong> 7.64 </p>
+  </div>
+</div>
+
+
+    <div class="education-entry">
+      <img src="rgukt.jpg" alt="RGUKT Logo" class="edu-img">
+  <div class="edu-text">
+      <h2>PUC(Pre University Course)(Class XII)</h2>
+      <p><strong>Institution:</strong> Rajiv Gandhi University Of Knowledge And Technologies, RK Valley</p>
+      <p><strong>Year:</strong> 2021 – 2023</p>
+      <p><strong>Percentage:</strong> 95%</p>
+    </div>
+</div>
+    <div class="education-entry">
+      <img src="jj.jpg" alt="RGUKT Logo" class="edu-img">
+  <div class="edu-text">
+      <h2>Secondary Education (Class X)</h2>
+      <p><strong>Institution:</strong> Jeevan Jyothi English Medium High School</p>
+      <p><strong>Board:</strong> SSC</p>
+      <p><strong>Year:</strong> 2021</p>
+      <p><strong>CGPA:</strong> 10.0</p>
+    </div>
+</div>
+  </div>
+</div>
+
+<!-- ... (rest of your unchanged HTML) ... -->
+
+
+  <!-- Fixed Footer -->
+  <footer>
+  <!-- <h2>Connect with Me</h2> -->
+  <a href="https://github.com/Keerthi-2012" target="_blank" aria-label="GitHub"><i class="fab fa-github fa-2x"></i></a>
+  <a href="mailto:seelakeerthi123@gmail.com" aria-label="Email"><i class="fas fa-envelope fa-2x"></i></a>
+  <a href="https://www.instagram.com/seela_keerthi" target="_blank" aria-label="Instagram"><i class="fab fa-instagram fa-2x"></i></a>
+  <a href="https://www.linkedin.com/in/keerthi-seela-4511a92a7/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
+  <a href="https://www.facebook.com/profile.php?id=100095142138080" target="_blank" aria-label="Facebook"><i class="fab fa-facebook fa-2x"></i></a>
+</footer>
+
+
+<script>
+  const toggleBtn = document.getElementById("theme-toggle");
+  const body = document.body;
+
+  function setTheme(isDark) {
+    if (isDark) {
+      body.classList.add("dark-mode");
+      toggleBtn.textContent = "🌤️";
+      localStorage.setItem("theme", "dark");
+    } else {
+      body.classList.remove("dark-mode");
+      toggleBtn.textContent = "⏾";
+      localStorage.setItem("theme", "light");
+    }
+  }
+
+  // Initialize from localStorage
+  const storedTheme = localStorage.getItem("theme");
+  setTheme(storedTheme === "dark");
+
+  // Toggle on click
+  toggleBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const isDark = !body.classList.contains("dark-mode");
+    setTheme(isDark);
+  });
+</script>
+
+</body>
+</html>

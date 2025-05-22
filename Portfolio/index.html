@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome Page</title>
+  <link rel="stylesheet" href="index.css" />
+  <script>
+    (function () {
+      const theme = localStorage.getItem("theme");
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark-mode");
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div class="main-box">
+    <nav>
+      <a href="about.html">About</a>
+      <a href="education.html">Education</a>
+      <a href="skills.html">Skills</a>
+      <a href="resume.html">Resume</a>
+      <a href="#" id="theme-toggle" title="Toggle Dark Mode">⏾</a> 
+    </nav>
+
+    <div class="content">
+      <h1>Welcome to my website</h1>
+    </div>
+
+    <div class="signature">.Keerthi Seela</div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const homeLink = document.querySelector("a[href='index.html']");
+      const mainBox = document.querySelector(".main-box");
+
+      homeLink?.addEventListener("click", (e) => {
+        e.preventDefault();
+        mainBox.classList.remove("pop-animation");
+        void mainBox.offsetWidth;
+        mainBox.classList.add("pop-animation");
+      });
+    });
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('animate') === 'true') {
+      const mainBox = document.querySelector(".main-box");
+      mainBox.classList.remove("pop-animation");
+      void mainBox.offsetWidth;
+      mainBox.classList.add("pop-animation");
+    }
+
+    const toggleBtn = document.getElementById("theme-toggle");
+    const root = document.documentElement;
+    function setTheme(isDark) {
+      if (isDark) {
+        root.classList.add("dark-mode");
+        toggleBtn.textContent = "🌤️";
+        localStorage.setItem("theme", "dark");
+      } else {
+        root.classList.remove("dark-mode");
+        toggleBtn.textContent = "⏾";
+        localStorage.setItem("theme", "light");
+      }
+    }
+
+    setTheme(localStorage.getItem("theme") === "dark");
+
+    toggleBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      setTheme(!document.documentElement.classList.contains("dark-mode"));
+    });
+  </script>
+
+</body>
+</html>

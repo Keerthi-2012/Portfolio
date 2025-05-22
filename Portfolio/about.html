@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="about.css" />
+</head>
+
+<body>
+
+  <!-- Fixed Navigation Bar -->
+  <nav>
+    <a href="index.html?animate=true">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="education.html">Education</a>
+    <a href="skills.html">Skills</a>
+    <a href="resume.html">Resume</a>
+    <a href="#" id="theme-toggle" title="Toggle Dark Mode">⏾</a>
+  </nav>
+
+<!-- ... (rest of your unchanged HTML) ... -->
+
+<div class="main-box">
+  <div class="content-container">
+    <div class="image-container">
+      <img src="keerthi.jpg" alt="Keerthi Seela" class="profile-img" />
+    </div>
+    <div class="text-content">
+      <p>
+        I am <strong> Keerthi Seela</strong> a third-year undergraduate student pursuing Bachelor's degree in Electronics and Communication Engineering (ECE) at IIIT Hyderabad. I am currently an undergraduate researcher at Robotics Research Center (RRC), IIITH, where I am working majorly on robust Reinforcement Learning. 
+      </p>  
+      <p>My academic journey has provided me with a strong foundation in core areas of electronics, communication, and select aspects of computer science.
+      </p>
+      <p>
+        I am confident in Data Structures and Algorithms (DSA) and have worked on several web development projects. In addition to my coursework, I actively participate in coding contests and collaborative technical projects with my peers. I make a conscious effort to utilize my free time to upskill myself and stay updated with new technologies.
+      </p>
+      <p>
+        
+        <p>
+        Outside academics, I am passionate about photography. I enjoy capturing moments, editing photos, and sharing them on social media.
+      </p>
+    </div>
+    
+  </div>
+</div>
+
+
+
+<!-- ... (rest of your unchanged HTML) ... -->
+
+
+  <!-- Fixed Footer -->
+  <footer>
+  <!-- <h2>Connect with Me</h2> -->
+  <a href="https://github.com/Keerthi-2012" target="_blank" aria-label="GitHub"><i class="fab fa-github fa-2x"></i></a>
+  <a href="mailto:seelakeerthi123@gmail.com" aria-label="Email"><i class="fas fa-envelope fa-2x"></i></a>
+  <a href="https://www.instagram.com/seela_keerthi" target="_blank" aria-label="Instagram"><i class="fab fa-instagram fa-2x"></i></a>
+  <a href="https://www.linkedin.com/in/keerthi-seela-4511a92a7/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
+  <a href="https://www.facebook.com/profile.php?id=100095142138080" target="_blank" aria-label="Facebook"><i class="fab fa-facebook fa-2x"></i></a>
+</footer>
+
+<script>
+  const toggleBtn = document.getElementById("theme-toggle");
+  const body = document.body;
+
+  function setTheme(isDark) {
+    if (isDark) {
+      body.classList.add("dark-mode");
+      toggleBtn.textContent = "🌤️";
+      localStorage.setItem("theme", "dark");
+    } else {
+      body.classList.remove("dark-mode");
+      toggleBtn.textContent = "⏾";
+      localStorage.setItem("theme", "light");
+    }
+  }
+
+  // Initialize from localStorage
+  const storedTheme = localStorage.getItem("theme");
+  setTheme(storedTheme === "dark");
+
+  // Toggle on click
+  toggleBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const isDark = !body.classList.contains("dark-mode");
+    setTheme(isDark);
+  });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,210 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(to bottom, #5f9fdf, #ffffff);
+      font-family:cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Central container with background image */
+    .main-box {
+  width: 90%;
+  max-width: 1100px;
+  height: 600px;
+  background: url('profile1.jpg') no-repeat center center/cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes popOut {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.main-box.pop-animation {
+  animation: popOut 0.6s ease;
+}
+
+
+    /* Top-right nav menu */
+    .main-box nav {
+      position: absolute;
+      top: 35px;
+      right: 30px;
+    }
+
+    .main-box nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2em;
+      text-shadow: 1px 1px 2px black;
+    }
+
+    .main-box nav a:hover {
+    font-family:monospace;
+    }
+
+    /* Welcome text and button */
+    .main-box .content {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      text-shadow: 2px 2px 4px black;
+    }
+
+    .main-box .content h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .main-box .content button {
+      background: transparent;
+      color: white;
+      border: transparent;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.3em;
+      text-shadow: 2px 2px 4px black;
+      margin-left: -30px;
+    }
+
+    /* Footer signature in bottom right */
+    .main-box .signature {
+      position: absolute;
+      bottom: 20px;
+      right: 30px;
+      color: rgb(255, 255, 255);
+      font-size: 1.2em;
+      text-shadow: 1px 1px 2px black;
+    }
+
+    /* Dark mode styles */
+.dark-mode body {
+  background: linear-gradient(to bottom, #1e1e1e, #2e2e2e);
+  color: white;
+}
+
+.dark-mode body .main-box {
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode body  .main-box nav a {
+  color: #f5f5f5;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.dark-mode body  .main-box .content,
+.dark-mode body  .main-box .signature {
+  color: #f5f5f5;
+  text-shadow: 2px 2px 4px #000;
+}
+
+/* Theme toggle button style */
+#theme-toggle {
+  font-size: 1.2em;
+  text-decoration: none;
+  margin-right: 20px;
+  color: white;
+  cursor: pointer;
+  text-shadow: 1px 1px 2px black;
+}
+
+.dark-mode body  #theme-toggle {
+  color: yellow;
+}
+/* Dark mode background and content adjustments */
+.dark-mode body  {
+  background: linear-gradient(to bottom, #121212, #1e1e1e); /* darker gradient */
+  color: #f5f5f5;
+}
+
+.dark-mode body  .main-box {
+  background: url('night4.jpg') no-repeat center center/cover;
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode body  .main-box nav a {
+  color: #f5f5f5;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.dark-mode body  .main-box .content,
+.dark-mode body  .main-box .signature {
+  color: #f5f5f5;
+  text-shadow: 2px 2px 4px #000;
+}
+
+/* Optional: Smooth transition */
+body, .main-box {
+  transition: background 0s ease, color 0.4s ease, box-shadow 0.4s ease;
+}
+
+
+/* Responsive: small phones like 360x800 */
+@media (max-width: 780px) {
+  .main-box nav a {
+    font-size: 0.8em;
+    padding: 0.5px;
+  }
+
+  .main-box nav a {
+  padding: 0 5px;
+}
+
+.dark-mode body  .main-box nav a {
+  padding: 0 3px;
+}
+
+.main-box .content h1 {
+  font-size: large;
+  transform: translate(-1%, -0%);
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px black;
+}
+
+  .main-box{
+    width: 99%;
+  max-width: 1100px;
+  height: 600px;
+  background: url('profile5.jpg') no-repeat center center/cover;
+  position: 10px;
+  }
+
+  .main-box .signature {
+    font-size: 0.9em;
+  }
+
+  #theme-toggle {
+    font-size: 1em;
+    margin: 0;
+  }
+}
