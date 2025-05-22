@@ -21,7 +21,7 @@
     <a href="education.html" class="active">Education</a>
     <a href="skills.html">Skills</a>
     <a href="resume.html">Resume</a>
-    <a href="#" id="theme-toggle" title="Toggle Dark Mode">⏾</a>
+    <a href="#" id="theme-toggle" title="Toggle Dark Mode">Dark</a>
   </nav>
 
 <!-- ... (rest of your unchanged HTML) ... -->
@@ -84,11 +84,11 @@
   function setTheme(isDark) {
     if (isDark) {
       body.classList.add("dark-mode");
-      toggleBtn.textContent = "🌤️";
+      toggleBtn.textContent = "Light";
       localStorage.setItem("theme", "dark");
     } else {
       body.classList.remove("dark-mode");
-      toggleBtn.textContent = "⏾";
+      toggleBtn.textContent = "Dark";
       localStorage.setItem("theme", "light");
     }
   }
